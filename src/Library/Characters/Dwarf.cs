@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Dwarf
+public class Dwarf:ICharacter
 {
     private int health = 100;
 
@@ -11,17 +11,13 @@ public class Dwarf
 
     public string Name { get; set; }
 
-    public Axe Axe { get; set; }
-
-    public Shield Shield { get; set; }
-
-    public Helmet Helmet { get; set; }
+    public IItem iitem { get; set; }
 
     public int AttackValue
     {
         get
         {
-            return Axe.AttackValue;
+            return iitem.AttackValue;
         }
     }
 
@@ -29,7 +25,7 @@ public class Dwarf
     {
         get
         {
-            return Shield.DefenseValue + Helmet.DefenseValue;
+            return iitem.DefenseValue + iitem.DefenseValue;
         }
     }
 
@@ -39,7 +35,7 @@ public class Dwarf
         {
             return this.health;
         }
-        private set
+        set
         {
             this.health = value < 0 ? 0 : value;
         }

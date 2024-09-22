@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Axe
+public class Axe:IItem
 {
     public int AttackValue 
     {
@@ -8,5 +8,13 @@ public class Axe
         {
             return 25;
         } 
+    }
+    public int DefenseValue
+    {
+        get
+        {
+            return 0;
+        }
+        
     }
 }
