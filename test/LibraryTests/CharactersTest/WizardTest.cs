@@ -14,12 +14,12 @@ namespace TestLibrary
             // Inicializamos el mago con su bastón y libro de hechizos
             wizard = new Wizard("Merlin")
             {
-                Staff = new Staff(), // Ataque = 100, Defensa = 100
+                Staff = new Staff(), // Suponiendo que el ataque y defensa del bastón son 100
                 SpellsBook = new SpellsBook
                 {
                     Spells = new Spell[] // Inicializamos con un hechizo
                     {
-                        new Spell() // Ataque = 70, Defensa = 70
+                        new Spell() // Suponiendo que el ataque y defensa del hechizo son 70
                     }
                 }
             };
@@ -50,7 +50,7 @@ namespace TestLibrary
         public void TestReceiveAttack()
         {
             // Ataque menor que defensa, salud no cambia
-            wizard.ReceiveAttack(200);
+            wizard.ReceiveAttack(150);
             Assert.That(wizard.Health, Is.EqualTo(100)); // Defensa = 170
         }
 
