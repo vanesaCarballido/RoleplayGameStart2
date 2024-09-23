@@ -4,18 +4,55 @@ public class Knight:ICharacter
 {
 
     private int health = 100;
+    private Sword sword;
+    private Shield shield;
+    private Armor armor;
     public Knight(string name)
     {
         this.Name = name;
     }
-
     public string Name { get; set; }
 
-    public Sword Sword { get; set; }
+    public Sword Sword
+    {
+        get { return sword; }
+        set
+        {
+            if (sword == null)
+                sword = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee la espada");
+            }
+        }
+    }
+    public Shield Shield
+    {
+        get { return shield; }
+        set
+        {
+            if (shield == null)
+                shield = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el escudo");
+            }
+        }
+    }
 
-    public Shield Shield { get; set; }
-
-    public Armor Armor { get; set; }
+    public Armor Armor
+    {
+        get { return armor; }
+        set
+        {
+            if (armor == null)
+                armor = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee armadura");
+            }
+        }
+    }
 
     public int AttackValue
     {

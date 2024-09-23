@@ -3,6 +3,9 @@ namespace Ucu.Poo.RoleplayGame;
 public class Dwarf:ICharacter
 {
     private int health = 100;
+    private Axe axe;
+    private Helmet helmet;
+    private Shield shield;
 
     public Dwarf(string name)
     {
@@ -11,13 +14,51 @@ public class Dwarf:ICharacter
 
     public string Name { get; set; }
 
-    public IItem iitem { get; set; }
+    public Axe Axe
+    {
+        get { return axe; }
+        set
+        {
+            if (axe == null)
+                axe = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el hacha");
+            }
+        }
+    }
+    public Helmet Helmet
+    {
+        get { return helmet; }
+        set
+        {
+            if (helmet == null)
+                helmet = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el casco");
+            }
+        }
+    }
+    public Shield Shield
+    {
+        get { return shield; }
+        set
+        {
+            if (shield == null)
+                shield = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el escudo");
+            }
+        }
+    }
 
     public int AttackValue
     {
         get
         {
-            return iitem.AttackValue;
+            return Axe.AttackValue;
         }
     }
 
@@ -25,7 +66,7 @@ public class Dwarf:ICharacter
     {
         get
         {
-            return iitem.DefenseValue + iitem.DefenseValue;
+            return Shield.DefenseValue + Helmet.DefenseValue;
         }
     }
 
