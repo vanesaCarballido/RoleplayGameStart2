@@ -1,11 +1,13 @@
 ﻿using Ucu.Poo.RoleplayGame;
 
 SpellsBook book = new SpellsBook();
-book.Spells = new Spell[]{ new Spell() };
+Spell spell = new Spell();
+book.Spells = new Spell[]{ spell };
 
 Wizard gandalf = new Wizard("Gandalf");
 gandalf.Staff = new Staff();
 gandalf.SpellsBook = book;
+gandalf.Staff = new Staff();
 
 Dwarf gimli = new Dwarf("Gimli");
 gimli.Axe = new Axe();
@@ -22,4 +24,3 @@ Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 gimli.Cure();
 
 Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-

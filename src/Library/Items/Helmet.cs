@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Helmet
+public class Helmet:IItem
 {
     public int DefenseValue
     {
@@ -8,5 +8,10 @@ public class Helmet
         {
             return 18;
         }
+    }
+
+    public int AttackValue
+    {
+        get { return 0; }
     }
 }

@@ -1,19 +1,43 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Wizard
+public class Wizard:ICharacter
 {
-    private int health = 100;
-
+    private int health =100;
+    private SpellsBook spellsBook;
+    private Staff staff;
     public Wizard(string name)
     {
         this.Name = name;
     }
-
     public string Name { get; set; }
 
-    public SpellsBook SpellsBook { get; set; }
+    public SpellsBook SpellsBook 
+    {
+        get { return spellsBook; }
+        set
+        {
+            if (spellsBook == null)
+                spellsBook = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el libro de hechizos");
+            }
+        }
+    }
 
-    public Staff Staff { get; set; }
+    public Staff Staff
+    {
+        get { return staff; }
+        set
+        {
+            if (staff == null)
+                staff = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el bastón");
+            }
+        }
+    }
 
     public int AttackValue
     {
@@ -37,7 +61,7 @@ public class Wizard
         {
             return this.health;
         }
-        private set
+        set
         {
             this.health = value < 0 ? 0 : value;
         }

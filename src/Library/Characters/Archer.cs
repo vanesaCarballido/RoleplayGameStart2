@@ -1,9 +1,10 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Archer
+public class Archer:ICharacter
 {
     private int health = 100;
-
+    private Bow bow;
+    private Helmet helmet;
     public Archer(string name)
     {
         this.Name = name;
@@ -11,9 +12,33 @@ public class Archer
 
     public string Name { get; set; }
     
-    public Bow Bow { get; set; }
+    public Bow Bow 
+    {
+        get { return bow; }
+        set
+        {
+            if (bow == null)
+                bow = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el arco");
+            }
+        }
+    }
 
-    public Helmet Helmet { get; set; }
+    public Helmet Helmet
+    {
+        get { return helmet; }
+        set
+        {
+            if (helmet == null)
+                helmet = value;
+            else
+            {
+                Console.WriteLine($"{this.Name} ya posee el casco"); 
+            }
+        }
+    }
 
     public int AttackValue
     {
@@ -37,7 +62,7 @@ public class Archer
         {
             return this.health;
         }
-        private set
+        set
         {
             this.health = value < 0 ? 0 : value;
         }
