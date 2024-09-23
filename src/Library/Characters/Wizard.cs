@@ -2,15 +2,22 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Wizard:ICharacter
 {
-    private int health =100;
-
+    private int health = 100;
+    private List<IItem> listOfItems = new List<IItem>();
     public Wizard(string name)
     {
         this.Name = name;
     }
-
     public string Name { get; set; }
 
+    public List<IItem> ListOfItems
+    {
+        get
+        {
+            return listOfItems;
+        }
+    }
+    
     public SpellsBook SpellsBook { get; set; }
 
     public Staff Staff { get; set; }

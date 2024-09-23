@@ -8,10 +8,9 @@ public class Dwarf:ICharacter
     {
         this.Name = name;
     }
-
     public string Name { get; set; }
 
-    public IItem iitem { get; set; }
+    
 
     public int AttackValue
     {
